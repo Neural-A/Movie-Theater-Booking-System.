@@ -1,40 +1,93 @@
+import java.util.*; 
+import Utilities;
+
 public class MovieTicket {
-
-    //For the types of seats
-    public enum Seat_Type
-    {
-        standard,
-        premium,
-        recliner,
-        luxury,
-        couples
-    };
-
     //My Variables
-    String Movie_name;
-    double Price;
-    Seat_Type seatType;
+    private String Movie_name;
+    private double Price;
+    private Utilities Seat_Type seatType;
 
+
+    //Getters 
+    public String getMovie_Name () 
+    {
+        try{
+            return Movie_name; 
+        }catch(IOException e) 
+            {
+                System.out.println("NAME NOT RETRIEVED"); 
+        } 
+    }; 
+
+    public double getPrice() 
+    {
+        try{
+            return Price; 
+        }catch(IOException e) 
+            {
+               System.out.println("PRICE NOT RETRIEVED"); 
+        } 
+    }; 
+
+    public static Utilities getSeatType()
+    {
+        try{
+            return seatType; 
+        }catch(IOException e) 
+            {
+                System.out.println("SEAT TYPE NOT RETRIEVED"); 
+        } 
+    };
+    //Setters 
+    public void setName(String Movie_name) 
+    { 
+       try{
+           this.Movie_name =  Movie_name;
+       }catch(IOException e)
+           {
+               System.out.println("NAME NOT SET");
+           }
+    }
+
+    public void setPrice(double Price) 
+    {
+       try{
+           this.Price =  Price;
+       }catch(IOException e)
+           {
+               System.out.println("PRICE NOT SET");
+           }
+    }
+
+    public void setSeatType(Utilities Seat_Type) 
+    {
+        try
+        {this.Seat_Type = Type; }
+        catch(IOException e) 
+            {
+                System.out.println("SEAT NOT RETRIEVED"); 
+            }
+    }
     //My Actuall methods
 
-    public double SelectSeat(Seat_Type myseat)
+    public double SelectSeat()
     {
-        if (myseat  == Seat_Type.standard)
+        if (getSeatType()  == getSeatType().standard)
         {
             Price =  17.59;
-        } else if(myseat == Seat_Type.premium)
+        } else if(getSeatType() == getSeatType()I.premium)
         {
-            Price =  17.59*1.5;
-        }else if (myseat == Seat_Type.recliner)
+            getPrice() =  17.59*1.5;
+        }else if (getSeatType() == getSeatType().recliner)
         {
-            Price =  17.59*2.5;
-        }else if (myseat == Seat_Type.luxury) {
-            Price =  17.59*3.5;
-        }else if (myseat == Seat_Type.couples)
+            getPrice() =  17.59*2.5;
+        }else if (getSeatType() == getSeatType().luxury) {
+            getPrice() =  17.59*3.5;
+        }else if (getSeatType() == getSeatType().couples)
         {
-            Price =  17.59*5.5;
+            getPrice() =  17.59*5.5;
         }
-        return Price;
+        return getPrice();
     }
 
     public void PrintT()
